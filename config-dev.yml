@@ -1,0 +1,19 @@
+server:
+  port: 7002
+
+
+eureka:
+  instance:
+    hostname: eureka7002.com #eureka服务端的实列名称
+  client:
+    #false表示不向注册中心注册自己
+    register-with-eureka: false
+    fetch-registry: false
+    #设置与eureka server交互的地址查询服务和注册服务都要依赖这个地址 ,(可在浏览器输入http://localhost:7001/就能打开spring eureka)
+    service-url:
+      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #单机配置
+      defaultZone: http://eureka7002.com:7002/eureka/  #单机配置
+      #  defaultZone: http://eureka7001.com:7001/eureka/  #服务集群 相互注册
+
+
+
